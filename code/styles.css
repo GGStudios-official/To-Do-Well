@@ -1,0 +1,12 @@
+.top-bar {
+  height: 50px;
+  width: 2540px;
+  background-color: #1f5063;
+  border-radius: 8px;
+}
+.left-bar {
+  height: 1230px;
+  width: 50px;
+  background-color: #1f5063;
+  border-radius: 8px;
+}
