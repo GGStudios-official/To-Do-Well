@@ -1,12 +1,47 @@
 .top-bar {
-  height: 50px;
-  width: 2540px;
-  background-color: #1f5063;
-  border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    gap: 20px; /* Space between items */
 }
-.left-bar {
-  height: 1230px;
-  width: 50px;
-  background-color: #1f5063;
-  border-radius: 8px;
+
+#logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    margin-right: auto; /* Push nav items to the right */
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 16px; /* Replacing 1rem with 16px */
+    cursor: pointer;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+#sign-in{
+    background: #418fe8;
+    border-radius: 5px;
+    padding: 7px 10px;
+    font-weight: 250;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+#sign-in:hover{
+    background: #2f6bb8;
+    transition: 0.3s;
 }
