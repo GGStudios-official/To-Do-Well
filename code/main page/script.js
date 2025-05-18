@@ -1,44 +1,50 @@
-const github = document.getElementById('github');
+document.addEventListener("DOMContentLoaded", () => {
+  const words = document.querySelectorAll(".word");
+  const sun = document.getElementById("sun-icon");
+  const day = document.getElementById("day");
+  const github = document.getElementById("github");
+  const toggleBtn = document.getElementById("theme-toggle");
 
-function jumpAndWave() {
-  github.classList.add('jump');
-
-  setTimeout(() => {
-    github.classList.remove('jump');
-    github.classList.add('wave');
-  }, 400); // after jump
-
-  setTimeout(() => {
-    github.classList.remove('wave');
-  }, 1000); // jump + wave = 1s
-}
-
-jumpAndWave();
-setInterval(jumpAndWave, 5000);
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Animate GitHub icon every 3 seconds
-  const github = document.getElementById('github');
-  setInterval(() => {
-    github.classList.add('jump');
-    setTimeout(() => github.classList.remove('jump'), 400);
-
+  // Animate welcome text word by word
+  words.forEach((word, i) => {
     setTimeout(() => {
-      github.classList.add('wave');
-      setTimeout(() => github.classList.remove('wave'), 600);
-    }, 500);
+      word.style.opacity = 1;
+    }, i * 500);
+  });
+
+  // Sun animation: diagonal collide with 'day'
+  setTimeout(() => {
+    sun.style.opacity = 1;
+    sun.style.transform = "translate(calc(-50% + 80px), 120px) scale(1) rotate(45deg)";
+  }, 1500);
+
+  // Highlight day text and hide sun after collision
+  setTimeout(() => {
+    day.classList.add("highlighted");
+    sun.style.opacity = 0;
   }, 3000);
 
-  // Theme toggle button logic
-  const toggleBtn = document.getElementById('theme-toggle');
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+  // GitHub cat dance loop
+  function jumpAndWave() {
+    github.classList.add("jump");
+    setTimeout(() => {
+      github.classList.remove("jump");
+      github.classList.add("wave");
+    }, 400);
+    setTimeout(() => {
+      github.classList.remove("wave");
+    }, 1000);
+  }
 
-    // Swap GitHub icon based on current theme
-    if (document.body.classList.contains('dark')) {
-      github.src = 'githubinverted.png';  // Dark mode image
-    } else {
-      github.src = 'GitHub.png';          // Light mode image
-    }
+  jumpAndWave(); // initial
+  setInterval(jumpAndWave, 5000);
+
+  // Stylish Theme toggle
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggleBtn.classList.toggle("active");
+
+    // Change GitHub icon based on theme
+    github.src = document.body.classList.contains("dark") ? "githubinverted.png" : "GitHub.png";
   });
 });

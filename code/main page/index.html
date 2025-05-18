@@ -1,33 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>To-Do Well</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>To-Do Well</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="top-bar">
-        <h1 id="logo">To-Do Well</h1>
-        <button class="nav-link" id="home">Home</button>
-        <button class="nav-link" id="features">Features</button>
-        <button class="nav-link" id="pricing">Pricing</button>
-        <a href="https://github.com/GGStudios-official/To-Do-Well" target="_blank" rel="noopener">
-            <img src="GitHub.png" alt="GitHub" class="GitHub" id="github" />
-        </a>
-        <button id="theme-toggle" aria-label="Toggle theme">
-            <span class="icon sun">☀️</span>
-            <span class="icon moon">🌙</span>
-        </button>
+  <div class="top-bar">
+    <h1 id="logo">To-Do Well</h1>
+    <button class="nav-link" id="home">Home</button>
+    <button class="nav-link" id="features">Features</button>
+    <button class="nav-link" id="pricing">Pricing</button>
+    <a href="https://github.com/GGStudios-official/To-Do-Well" target="_blank" rel="noopener">
+      <img src="GitHub.png" alt="GitHub" class="GitHub" id="github" />
+    </a>
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <span class="icon sun">☀️</span>
+      <span class="icon moon">🌙</span>
+      <div class="knob"></div>
+    </button>
+    <button class="nav-link" id="sign-in">Sign In</button>
+  </div>
 
-        <button class="nav-link" id="sign-in">Sign In</button>
-    </div>
+  <div class="title"> 
+    <h1 class="welcome-text">
+      <span class="word Your" style="opacity: 0;">Your</span> 
+      <span id="day" class="word day" style="opacity: 0;">day</span> 
+      <span class="word awaits" style="opacity: 0;">awaits.</span>
+      <svg id="sun-icon" viewBox="0 0 64 64" fill="orange" xmlns="http://www.w3.org/2000/svg" style="opacity: 0; position: absolute; width: 50px; height: 50px;">
+        <circle cx="32" cy="32" r="14" />
+        <g stroke="orange" stroke-width="3">
+          <line x1="32" y1="4" x2="32" y2="14" />
+          <line x1="32" y1="50" x2="32" y2="60" />
+          <line x1="4" y1="32" x2="14" y2="32" />
+          <line x1="50" y1="32" x2="60" y2="32" />
+          <line x1="12" y1="12" x2="18" y2="18" />
+          <line x1="46" y1="46" x2="52" y2="52" />
+          <line x1="12" y1="52" x2="18" y2="46" />
+          <line x1="46" y1="18" x2="52" y2="12" />
+        </g>
+      </svg>
+  </div>
 
-    <div class="title"> 
-        <h1 class="welcome-text">
-            Your <span class="highlight">day</span> awaits.
-        </h1>
-    </div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
