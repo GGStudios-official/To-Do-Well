@@ -1,30 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   const words = document.querySelectorAll(".word");
-  const sun = document.getElementById("sun-icon");
   const day = document.getElementById("day");
   const github = document.getElementById("github");
   const toggleBtn = document.getElementById("theme-toggle");
+  const subTitle1 = document.getElementById("Sub-title1");
+  const subTitle2 = document.getElementById("Sub-title2");
 
   // Animate welcome text word by word
   words.forEach((word, i) => {
     setTimeout(() => {
       word.style.opacity = 1;
-    }, i * 500);
+
+      // After the last word fades in, apply shimmer to "day"
+      if (i === words.length - 1) {
+        subTitle1.style.opacity = 100; // or whatever effect you want
+        subTitle2.style.opacity = 100;
+        setTimeout(() => {
+          day.classList.add("highlighted");
+        }, 500); // small delay after final word
+      }
+    }, i * 800); // slower for better visual effect
   });
 
-  // Sun animation: diagonal collide with 'day'
-  setTimeout(() => {
-    sun.style.opacity = 1;
-    sun.style.transform = "translate(calc(-50% + 80px), 120px) scale(1) rotate(45deg)";
-  }, 1500);
-
-  // Highlight day text and hide sun after collision
-  setTimeout(() => {
-    day.classList.add("highlighted");
-    sun.style.opacity = 0;
-  }, 3000);
-
-  // GitHub cat dance loop
+  // GitHub icon bounce/wave loop
   function jumpAndWave() {
     github.classList.add("jump");
     setTimeout(() => {
@@ -36,15 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
-  jumpAndWave(); // initial
+  jumpAndWave();
   setInterval(jumpAndWave, 5000);
 
-  // Stylish Theme toggle
+  // Theme toggle
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     toggleBtn.classList.toggle("active");
-
-    // Change GitHub icon based on theme
     github.src = document.body.classList.contains("dark") ? "githubinverted.png" : "GitHub.png";
   });
 });

@@ -22,7 +22,32 @@ body.dark {
   font-family: 'Poppins', sans-serif;
   gap: 20px;
   background: var(--bg-color);
-  border-bottom: 1px solid #ccc;
+}
+#Sub-title1{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  font-size: 20px;
+  position:relative; top:80px
+}
+#Sub-title2{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  font-size: 20px;
+  position:relative; top:80px
+}
+#sign-in {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  background-color: rgb(73, 143, 184);
+  color: #fff;
+  border-radius: 15px;
+}
+#sign-in:hover{
+  background-color: rgb(50, 92, 117);
 }
 
 #logo {
@@ -43,7 +68,7 @@ body.dark {
   padding: 0;
 }
 
-.nav-link:hover {
+#underline:hover {
   text-decoration: underline;
 }
 
@@ -101,33 +126,33 @@ body.dark {
 
 #day {
   position: relative;
-  color: #444;
+  color: #1e1e1e; /* neutral grey */
   font-style: normal;
   font-weight: 400;
-  transition: color 0.5s ease;
   user-select: none;
+  transition: color 0.5s ease;
 }
 
 #day.highlighted {
-  background: linear-gradient(90deg, #f7b733, #fc4a1a, #ffe5a3, #ffc17a);
+  background: linear-gradient(270deg, #f7b733, #fc4a1a, #ffe5a3, #ffc17a);
+  background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-/* Sun icon */
-#sun-icon {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 1.5s ease-in-out;
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Stylish Theme Toggle */
@@ -185,4 +210,47 @@ body.dark {
 
 #theme-toggle.active .icon.moon {
   color: #f0c419;
+}
+/* Typing word fade-in */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#day {
+  color: #1e1e1e; /* initial solid text */
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Gradient overlay as glisten effect */
+#day::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #f7b733, #fc4a1a, #ffe5a3, #ffc17a);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: glistenReveal 6s ease-in-out forwards, glistenLoop 6s ease-in-out 6s infinite;
+  pointer-events: none;
+}
+
+/* First-time reveal: expands width */
+@keyframes glistenReveal {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Looping shimmer starts after 6s */
+@keyframes glistenLoop {
+  0%   { background-position: 300% center; }
+  100% { background-position: 0% center; }
 }
