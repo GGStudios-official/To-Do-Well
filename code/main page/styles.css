@@ -42,12 +42,12 @@ body.dark {
 #sign-in {
   font-family: 'Poppins', sans-serif;
   padding: 10px 20px;
-  background-color: rgb(73, 143, 184);
+  background-color: #4482e6;
   color: #fff;
   border-radius: 15px;
 }
 #sign-in:hover{
-  background-color: rgb(50, 92, 117);
+  background-color: #1854b3;
 }
 
 #logo {
@@ -253,4 +253,18 @@ body.dark {
 @keyframes glistenLoop {
   0%   { background-position: 300% center; }
   100% { background-position: 0% center; }
+}
+.started {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* optional, if you want vertical stacking */
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+  top: 80px;
+  opacity: 0;
+  gap: 10px;
 }

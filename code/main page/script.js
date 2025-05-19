@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("theme-toggle");
   const subTitle1 = document.getElementById("Sub-title1");
   const subTitle2 = document.getElementById("Sub-title2");
-  const hello = 0;
+  const getStarted = document.getElementById("get-started");
+  const download = document.getElementById("download");
 
   // Animate welcome text word by word
   words.forEach((word, i) => {
@@ -16,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (i === words.length - 1) {
         subTitle1.style.opacity = 100; // or whatever effect you want
         subTitle2.style.opacity = 100;
+        getStarted.style.opacity = 100;
+        download.style.opacity = 100;
         setTimeout(() => {
           day.classList.add("highlighted");
         }, 500); // small delay after final word
