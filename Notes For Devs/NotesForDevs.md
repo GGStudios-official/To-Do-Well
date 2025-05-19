@@ -1,2 +1,1 @@
-Here is where we can put plans:
- 
+The application itself will be written in html, css and js but then converted to electrSon
