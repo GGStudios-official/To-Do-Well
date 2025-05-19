@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("theme-toggle");
   const subTitle1 = document.getElementById("Sub-title1");
   const subTitle2 = document.getElementById("Sub-title2");
+  const hello = 0;
 
   // Animate welcome text word by word
   words.forEach((word, i) => {
