@@ -29,7 +29,7 @@ body.dark {
   font-weight: 500;
   opacity: 0;
   font-size: 20px;
-  position:relative; top:80px
+  position:relative; top:80px;
 }
 #Sub-title2{
   text-align: center;
@@ -254,17 +254,14 @@ body.dark {
   0%   { background-position: 300% center; }
   100% { background-position: 0% center; }
 }
-.started {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; /* optional, if you want vertical stacking */
+.buttonsCenter {
+  position: absolute;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 20px;
-  position: relative;
   top: 80px;
   opacity: 0;
   gap: 10px;
+  position:relative; top:80px;
 }
