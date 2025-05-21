@@ -19,17 +19,11 @@ A modern, highly customizable desktop-focused To-Do web app built with a clean a
 - 📦 **Modular Codebase**  
   Built with scalability and component reusability in mind.
 
-## 🛠️ Tech Stack
-
-- **Frontend**: React + TailwindCSS  
-- **State Management**: Zustand or Redux  
-- **Animations**: Framer Motion  
-- **Optional Backend**: Firebase / Supabase / LocalStorage
-
 ## 📦 Getting Started
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/clean-todo-app.git
-cd clean-todo-app
+git clone https://github.com/GGStudios-official/To-Do-Well.git
+cd To-Do-Well
+
