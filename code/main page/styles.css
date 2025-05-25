@@ -31,7 +31,8 @@ body.dark {
   border-radius: 15px;
 }
 #sign-in:hover{
-  background-color: #1854b3;
+  animation: hoverBounce 0.3s ease-in-out;
+  scale: 1.05;
 }
 
 #logo {
@@ -62,6 +63,10 @@ body.dark {
   cursor: pointer;
   transform-origin: bottom center;
   transition: transform 0.2s ease;
+}
+.GitHub:hover {
+  animation: hoverBounce 0.3s ease-in-out;
+  scale: 1.05;
 }
 
 .jump {
@@ -243,18 +248,102 @@ body.dark {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   top: 80px;
-  opacity: 100;
+  opacity: 0;
   gap: 10px;
   position:relative; top:80px;
+  transition: opacity 1s ease-in-out;
 }
-#Sub-title{
-  text-align: center;
+#get-help {
+  background-color: #4683e5;
   font-family: 'Poppins', sans-serif;
-  font-weight: lighter;
+  font-weight: 500;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
   font-size: 20px;
-  opacity: 50;
-  font-size: 15px;
-  position:relative; top:80px;
+  border-radius: 10px;
+}
+#download {
+  position: relative;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f7b733, #fc4a1a, #ffe5a3, #ffc17a);
+  padding: 12px 20px;
+  left: 10px;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  color: black;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#download::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#download.revealed::before {
+  opacity: 1;
+  animation: glistenShimmer 2s infinite;
+}
+
+@keyframes glistenShimmer {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+#Sub-title {
+  all: unset;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300 !important;
+  font-style: normal;
+  font-size: 12px;
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  top: 80px;
+  transition: opacity 1s ease-in-out;
+}
+@keyframes hoverBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#download:hover {
+  animation: hoverBounce 0.3s ease-in-out;
+  scale: 1.05;
+}
+#get-help:hover {
+  animation: hoverBounce 0.3s ease-in-out;
+  scale: 1.05;
 }

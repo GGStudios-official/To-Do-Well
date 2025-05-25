@@ -3,9 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const day = document.getElementById("day");
   const github = document.getElementById("github");
   const toggleBtn = document.getElementById("theme-toggle");
-  const subTitle1 = document.getElementById("Sub-title1");
-  const subTitle2 = document.getElementById("Sub-title2");
-  const getStarted = document.getElementById("buttonsCenter");
+  const downloadHelp = document.getElementById("downloadHelp");
+  const subTitle = document.getElementById("Sub-title");
   const download = document.getElementById("download");
 
   // Animate welcome text word by word
@@ -15,10 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // After the last word fades in, apply shimmer to "day"
       if (i === words.length - 1) {
-        subTitle1.style.opacity = 100; // or whatever effect you want
-        subTitle2.style.opacity = 100;
-        getStarted.style.opacity = 100;
-        download.style.opacity = 100;
+        downloadHelp.style.opacity = 100;
+        download.style.opacity = 1;
+        download.classList.add("revealed");
+
+        subTitle.style.opacity = 100;
         setTimeout(() => {
           day.classList.add("highlighted");
         }, 500); // small delay after final word
