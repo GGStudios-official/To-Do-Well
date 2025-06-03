@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     toggleBtn.classList.toggle("active");
-    github.src = document.body.classList.contains("dark") ? "githubinverted.png" : "GitHub.png";
+    github.src = document.body.classList.contains("dark")
+      ? "githubinverted.png"
+      : "gitHub.png";
   });
 });
