@@ -209,12 +209,12 @@ body.dark {
   background: #f0c419;
 }
 
-#theme-toggle.active .icon.sun {
-  color: #bbb;
-}
-
 #theme-toggle.active .icon.moon {
   color: #f0c419;
+}
+
+#theme-toggle.active .icon.sun {
+  color: #bbb;
 }
 /* Typing word fade-in */
 .word {
@@ -223,7 +223,7 @@ body.dark {
   transition: opacity 0.5s ease;
 }
 #day {
-  color: #1e1e1e; /* initial solid text */
+  color: #fdfcfc; /* initial solid text */
   transition: color 0.3s ease;
   position: relative;
   display: inline-block;
