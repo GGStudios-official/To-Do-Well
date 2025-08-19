@@ -210,11 +210,11 @@ body.dark {
 }
 
 #theme-toggle.active .icon.moon {
-  color: #f0c419;
+  color: #ffffff;
 }
 
 #theme-toggle.active .icon.sun {
-  color: #bbb;
+  color: #fffb01;
 }
 /* Typing word fade-in */
 .word {
@@ -373,8 +373,29 @@ body.dark {
   animation: hoverBounce 0.3s ease-in-out;
   scale: 1.05;
 }
+.shadow-card {
+  height: 500px;
+  width: 400px;
+  background-color: #1e1e1e;
+  border-radius: 20px;
+  position: absolute;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(0, 0, 0, 0.1); /* Default soft elevated shadow */
+  transition: box-shadow 0.1s ease, transform 0.1s ease; /* Smooth transitions */
+  transform-style: preserve-3d; /* Enable 3D transforms */
+  transform: translateZ(0); /* Initial elevation */
+}
+
+/* Position multiple cards as needed */
 #settingWindow {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(239, 13, 13, 0.5);
+  top: 135%;
+  left: 20%;
+}
+.settingTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 1000;
+  color: #ffffff;
+  font-style: normal;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 20px;
 }
